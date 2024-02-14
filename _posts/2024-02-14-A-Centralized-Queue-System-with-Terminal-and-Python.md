@@ -65,6 +65,8 @@ I have used the way satisfies all of my requirements. I'm reading the queue from
 
 ![{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
 
+![some-link]({{ 'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url }})
+
 [{{https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
 
 [https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path]

@@ -148,8 +148,9 @@
   },
   "active": "86da5fdee7b4e47a",
   "lastOpenFiles": [
-    "_posts/2020-02-28-sample-markdown.md",
+    "{{.md",
     "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+    "_posts/2020-02-28-sample-markdown.md",
     "assets/img/20.md",
     "assets%2Fimg%2F2024-02-14-A-Centralized-Queue-System-with%20Terminal%20and%20Python%2Fgsheet_screenshot.png.md",
     "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png",
