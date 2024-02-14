@@ -73,6 +73,7 @@ dssadfdfa
 
 !['AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url ]
 
+![[gsheet_screenshot.png]]
 The reader program is as follows:
 ``` python
 import gspread
