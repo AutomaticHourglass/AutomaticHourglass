@@ -1,0 +1,168 @@
+{
+  "main": {
+    "id": "510b4145dd3b3e9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "149c78620051cbe3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74e3921c3f5cee69",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d331664837299551",
+    "type": "split",
+    "children": [
+      {
+        "id": "a99d18e7cd22b011",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7966cdbc94dcc9f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9c000764c236f481",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "dab14c52429de58f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9486e0389ae2b6a5",
+    "type": "split",
+    "children": [
+      {
+        "id": "755b67d599223606",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5fa7bd2e9659a0e2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "191933489a89b06c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e268e38b53752833",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3d24ab50de27422b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "74e3921c3f5cee69",
+  "lastOpenFiles": [
+    "runpod.md",
+    "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gpt_params.png",
+    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/share_with_service_account.png",
+    "Screenshot 2024-02-14 at 12.35.19.png",
+    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gsheet_screenshot.png",
+    "assets/img/path.jpg",
+    "assets/img/crepe.jpg",
+    "assets/img/thumb.png",
+    "assets/img/bgimage.png",
+    "assets/img/avatar-icon.png",
+    "assets/img/404-southpark.jpg",
+    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python",
+    "asdadcas.md",
+    "www.runpod.io.md",
+    "_posts/2020-02-26-flake-it-till-you-make-it.md"
+  ]
+}
