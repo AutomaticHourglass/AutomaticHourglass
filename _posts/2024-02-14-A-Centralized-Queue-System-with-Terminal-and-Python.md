@@ -61,11 +61,10 @@ This part is up to your taste and/or requirements.
 %% Two example scenarios:
 - You are running multiple runner script to utilise one gpu with many instances which uses less than one gpu %%
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
-![[gsheet_screenshot.png]]
-[[assets%2Fimg%2F2024-02-14-A-Centralized-Queue-System-with%20Terminal%20and%20Python%2Fgsheet_screenshot.png]]
+![[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png]]
 
 Since the python program is going to update the counter, don't forget to share it with your service account for write access:
-![[share_with_service_account.png]]
+![[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png]]
 
 The reader program is as follows:
 ``` python
@@ -110,7 +109,7 @@ This was the only python part needed, to read and write to gsheet. Feel free to 
 
 ## Executing it with first additional parameters
 Since my current runs are nanogpt executions, I can give any global variable from command line as an override to the system and it will show like this:
-![[gpt_params.png]]
+![[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png]]
 *production parameters, logging all my debug runs?(no I'm not wandb)*
 
 But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly run `k` runs by dividing the GPU RAM among `k` pieces. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu and make `k` equal to `1`.

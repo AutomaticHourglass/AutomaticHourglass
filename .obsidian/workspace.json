@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "149c78620051cbe3",
+        "id": "ba13dbadf753f215",
         "type": "tabs",
         "children": [
           {
-            "id": "74e3921c3f5cee69",
+            "id": "86da5fdee7b4e47a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md"
+                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md"
               }
             }
           }
@@ -146,16 +146,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7966cdbc94dcc9f5",
+  "active": "86da5fdee7b4e47a",
   "lastOpenFiles": [
+    "_posts/2020-02-28-sample-markdown.md",
+    "assets/img/20.md",
+    "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+    "assets%2Fimg%2F2024-02-14-A-Centralized-Queue-System-with%20Terminal%20and%20Python%2Fgsheet_screenshot.png.md",
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png",
     "_posts/2020-02-26-flake-it-till-you-make-it.md",
     "backup/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
     "attachments/gpt_params.png",
     "attachments/share_with_service_account.png",
-    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/share_with_service_account.png",
-    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gsheet_screenshot.png",
-    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gpt_params.png",
-    "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png",
     "backup/2024-02-14-2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
     "aboutme.md",
     "CHANGELOG.md",
@@ -170,7 +173,7 @@
     "assets/img/path.jpg",
     "assets/img/crepe.jpg",
     "assets/img/thumb.png",
-    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python",
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python",
     "asdadcas.md",
     "www.runpod.io.md"
   ]
