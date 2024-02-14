@@ -63,9 +63,9 @@ This part is up to your taste and/or requirements.
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
 
-![[{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]]
+![{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
 
-![https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png]
+[{{https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
 
 [https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path]
 
