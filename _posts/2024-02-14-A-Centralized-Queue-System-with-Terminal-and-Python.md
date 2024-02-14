@@ -65,12 +65,12 @@ I have used the way satisfies all of my requirements. I'm reading the queue from
 
 ![[{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]]
 
-![{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]
+![{{https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]
 
-[{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]
+[{{https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path }}]
 
 Since the python program is going to update the counter, don't forget to share it with your service account for write access:
-[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png]
+[https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png]
 
 The reader program is as follows:
 ``` python
