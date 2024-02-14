@@ -112,8 +112,11 @@ This was the only python part needed, to read and write to gsheet. Feel free to 
 
 ## Executing it with first additional parameters
 Since my current runs are nanogpt executions, I can give any global variable from command line as an override to the system and it will show like this:
+
 ![[gpt_params.png]]
+
 ![]({{'https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
+
 *production parameters, logging all my debug runs?(no I'm not, wandb)*
 
 But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly run `k` runs by dividing the GPU RAM among `k` pieces. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu and make `k` equal to `1`.
