@@ -62,6 +62,7 @@ This part is up to your taste and/or requirements.
 - You are running multiple runner script to utilise one gpu with many instances which uses less than one gpu %%
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 ![[gsheet_screenshot.png]]
+[[assets%2Fimg%2F2024-02-14-A-Centralized-Queue-System-with%20Terminal%20and%20Python%2Fgsheet_screenshot.png]]
 
 Since the python program is going to update the counter, don't forget to share it with your service account for write access:
 ![[share_with_service_account.png]]
