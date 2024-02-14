@@ -7,24 +7,25 @@ tags:
   - bash
   - python
   - gsheet
-  - "#production"
+  - production
 comments: true
 author: Dr. Ünsal Gökdağ
 ---
-### TL;DR
+## TL;DR
 You can run multiple resources (GPU) consuming a central queue system(gsheet) with minimal intervention (mobile phone) 24/7 any place, any time (again, mobile phone) and also, check its status (logging, wandb).
-Interested in the solution? [solution](### PS: Whole Code)
-Interested in the process? Read along
+
+Interested in the solution? [Look at the end of the article](## PS: Whole Code)
+
+Interested in the process? Read along..
 
 
-
-### The Problem
+## The Problem
 I'm currently doing *a lot* of experiments on [runpod](https://runpod.io?ref=7mip03at) and I have realised that I'm constantly using at least 2 GPUs, all the time. I remember getting up from sleep and making typing a simple run script, changing a few characters and the going back to sleep and I did not liked this experience.
 So I started dabbling with chatGPT to create a simple bash script that reads a file which is literally called `gpu_queue.txt`, reads the first line and execute it. After a few minutes, a running version was working as intended.
 What I have started as a requirement is that multiple version of this should be able to run concurrently without firing up lines from the queue unless the gpu is free of use. They way checking that required me to use locks which I liked learning from chatGPT but the end solution became something *different* but *better* a bit in my opinion.
 
 
-### The Solution
+## The Solution
 I have thought about the ideal solution should have these:
 - Ability to be used by multiple consumers (GPUs, bash terminals, etc)
 - Utilise the GPUs in a good extent (more on that later)
@@ -55,7 +56,7 @@ Execute Queue consists of 4 parts:
 - Executing this with second additional parameters: To make the actual run
 
 Lets go over the this party by part:
-#### Reading an Element from the Queue
+### Reading an Element from the Queue
 This part is up to your taste and/or requirements.
 %% Two example scenarios:
 - You are running multiple runner script to utilise one gpu with many instances which uses less than one gpu %%
@@ -106,7 +107,7 @@ Quite simple, just reading `B1` cell and offsetting the line to read from `C` co
 
 This was the only python part needed, to read and write to gsheet. Feel free to make a pure bash implementation if you'd like (but make it simple please, otherwise, we know everything is possible..).
 
-### Executing it with first additional parameters
+## Executing it with first additional parameters
 Since my current runs are nanogpt executions, I can give any global variable from command line as an override to the system and it will show like this:
 ![[gpt_params.png]]
 *production parameters, logging all my debug runs?(no I'm not wandb)*
@@ -123,7 +124,7 @@ So my main process will fire up an experiment with *additional* parameters that 
 OVERRIDES=" --max_tokens=1000000 --wandb_log=False"
 ```
 
-#### Making Subprocesses
+### Making Subprocesses
 By making subprocesses! The reason is this;
 At any given point in time, you can measure the current gpu usage by probing `nvidia-smi` function in a subprocess but at which point? But what if we take 12 samples one after another every 10 seconds for a total of 2 minutes and return the maximum value we see during this time period?
 
@@ -146,7 +147,7 @@ gpu_memory_usage=$(max_gpu_usage)
 ```
 and then use it as a variable in the bash script.
 
-#### Estimating Maximum Batch Size
+### Estimating Maximum Batch Size
 If the run is successful, it should end around 1-2 minutes and during this time your GPU usage probe should be able to get the maximum GPU usage during *both* your training and validation cycles to have a healthy estimation of the current RAM usage of the experiment.
 
 ``` bash
@@ -194,7 +195,7 @@ wait "$pid"
 ```
 we estimate a raliable maximum batch size for this experiment.
 
-### Making the Actual Run
+## Making the Actual Run
 I have quickly realised that this will create checkpoints of multiple models and they all will have name `out.ckpt` which will get overwritten by each subsequent run. To eliminate that, I need to create a unique identifier during the run but I have found out that making this over the bash is super simple so I have decided to make it that way:
 ``` bash
 # Generate a new random 8-digit hexadecimal string for the 'id' variable
@@ -212,13 +213,13 @@ else
 fi
 ```
 
-### Closing Remarks
+## Closing Remarks
 This was actually fun and very teaching for me as now I have a responsibility to keep *the queue* full at all times and plan for the future and estimate how much free time I have before adding new jobs to the *queue*.
 
 As usual, I thank chatGPT for making my life very easy throughout the process but keeping me vigilant by frequent hallucinations or forgetting variables that existed or discussed about.
 
 ---
-### PS: Whole Code
+## PS: Whole Code
 file: `read_queue.py`
 ``` python
 import gspread

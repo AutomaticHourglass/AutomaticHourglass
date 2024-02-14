@@ -146,23 +146,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "74e3921c3f5cee69",
+  "active": "7966cdbc94dcc9f5",
   "lastOpenFiles": [
-    "runpod.md",
-    "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
-    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gpt_params.png",
+    "_posts/2020-02-26-flake-it-till-you-make-it.md",
+    "backup/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+    "attachments/gpt_params.png",
+    "attachments/share_with_service_account.png",
     "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/share_with_service_account.png",
-    "Screenshot 2024-02-14 at 12.35.19.png",
     "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gsheet_screenshot.png",
+    "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python/gpt_params.png",
+    "_posts/2024-02-14-A-Centralized-Queue-System-with Terminal and Python.md",
+    "backup/2024-02-14-2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+    "aboutme.md",
+    "CHANGELOG.md",
+    "README.md",
+    "ready/2024-02-14-2024-02-14-2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+    "backup",
+    "ready",
+    "attachments",
+    "runpod.md",
+    "Screenshot 2024-02-14 at 12.35.19.png",
+    "attachments/gsheet_screenshot.png",
     "assets/img/path.jpg",
     "assets/img/crepe.jpg",
     "assets/img/thumb.png",
-    "assets/img/bgimage.png",
-    "assets/img/avatar-icon.png",
-    "assets/img/404-southpark.jpg",
     "assets/img/2024-02-14-A-Centralized-Queue-System-with Terminal and Python",
     "asdadcas.md",
-    "www.runpod.io.md",
-    "_posts/2020-02-26-flake-it-till-you-make-it.md"
+    "www.runpod.io.md"
   ]
 }
