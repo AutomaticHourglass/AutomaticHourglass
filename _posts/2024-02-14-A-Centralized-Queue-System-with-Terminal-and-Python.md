@@ -57,22 +57,21 @@ Execute Queue consists of 4 parts:
 
 Lets go over the this party by part:
 ### Reading an Element from the Queue
+
 This part is up to your taste and/or requirements.
-%% Two example scenarios:
-- You are running multiple runner script to utilise one gpu with many instances which uses less than one gpu %%
+
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
 
-![{{assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
-
-![some-link]({{ 'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url }})
+![]({{ 'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url }})
 
 [{{https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png}}]
 
-[https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path]
+dssadfdfa
 
-Since the python program is going to update the counter, don't forget to share it with your service account for write access:
-[[https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png]]
+![]({{ 'AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url }})
+
+!['AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url ]
 
 The reader program is as follows:
 ``` python
