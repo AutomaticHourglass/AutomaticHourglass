@@ -107,7 +107,7 @@ Quite simple, just reading `B1` cell and offsetting the line to read from `C` co
 ![[share_with_service_account.png]]
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url}}){: .mx-auto.d-block :}
 
-*don't forget to add your service account as writer to the gsheet*
+*don't forget to add your service account as writer to the gsheet*{: .mx-auto.d-block :}
 
 This was the only python part needed, to read and write to gsheet. Feel free to make a pure bash implementation if you'd like (but make it simple please, otherwise, we know everything is possible..).
 
@@ -117,7 +117,7 @@ Since my current runs are nanogpt executions, I can give any global variable fro
 ![[gpt_params.png]]
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}}){: .mx-auto.d-block :}
 
-*production parameters, logging all my debug runs?(no I'm not, wandb)*
+*production parameters, logging all my debug runs?(no I'm not, wandb)*{: .mx-auto.d-block :}
 
 But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly make. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu. Technically, you can tweak this to have multiple running processes at the same time too.
 
