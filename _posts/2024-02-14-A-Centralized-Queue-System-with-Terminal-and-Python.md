@@ -117,7 +117,7 @@ Since my current runs are nanogpt executions, I can give any global variable fro
 
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
 
-*production parameters, logging all my debug runs?(no I'm not, wandb)*
+production parameters, logging all my debug runs?(no I'm not, wandb)
 
 But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly run `k` runs by dividing the GPU RAM among `k` pieces. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu and make `k` equal to `1`.
 
