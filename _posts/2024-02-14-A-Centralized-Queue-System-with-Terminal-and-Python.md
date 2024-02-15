@@ -115,7 +115,7 @@ Since my current runs are nanogpt executions, I can give any global variable fro
 
 ![[gpt_params.png]]
 
-![]({{'https://automatichourglass.github.io/AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
+![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
 
 *production parameters, logging all my debug runs?(no I'm not, wandb)*
 
