@@ -18,19 +18,19 @@ Interested in the solution? [Look at the end of the article](## PS: Whole Code)
 
 Interested in the process? Read along..
 
-
 ## The Problem
-I'm currently doing *a lot* of experiments on [runpod](https://runpod.io?ref=7mip03at) and I have realised that I'm constantly using at least 2 GPUs, all the time. I remember getting up from sleep and making typing a simple run script, changing a few characters and the going back to sleep and I did not liked this experience.
-So I started dabbling with chatGPT to create a simple bash script that reads a file which is literally called `gpu_queue.txt`, reads the first line and execute it. After a few minutes, a running version was working as intended.
-What I have started as a requirement is that multiple version of this should be able to run concurrently without firing up lines from the queue unless the gpu is free of use. They way checking that required me to use locks which I liked learning from chatGPT but the end solution became something *different* but *better* a bit in my opinion.
+I'm currently doing *a lot* of experiments on [runpod](https://runpod.io?ref=7mip03at) for machine learning purposes and I have realised that I'm constantly using at least 2 GPUs, all the time. I remember getting up from sleep and making typing a simple run script, changing a few characters and the going back to sleep and I did not liked this experience.
 
+So I started dabbling with chatGPT to create a simple bash script that reads a file which is literally called `gpu_queue.txt`, reads the first line and execute it. After a few minutes, a running version was working as intended.
+
+What I have started as a requirement is that multiple version of this should be able to run concurrently without executing lines from the queue unless the gpu is free of use. Checking that required me to use file locks which I liked learning from chatGPT but the end solution became something *different* but *better* a bit in my opinion.
 
 ## The Solution
 I have thought about the ideal solution should have these:
 - Ability to be used by multiple consumers (GPUs, bash terminals, etc)
 - Utilise the GPUs in a good extent (more on that later)
-- It should run as long as the queue feeds instructions to to it.
-- I should control be to control it 24/7 which is via my cellphone
+- It should run as long as the queue feeds instructions to it.
+- I should be able to control it 24/7 which is via my cellphone
 
 In the end, I have managed to achieve all of these requirements in less than 100 lines of code in 2 files: `runner.sh` and `read_queue.py`.
 
@@ -62,7 +62,7 @@ This part is up to your taste and/or requirements.
 
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
-![[gsheet_screenshot.png]]
+({{AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path}})
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url}})
 
 The reader program is as follows:
@@ -105,8 +105,8 @@ if __name__ == "__main__":
 Quite simple, just reading `B1` cell and offsetting the line to read from `C` column. You can make it as complicated as you want of course.
 
 ![[share_with_service_account.png]]
-![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url)
-don't forget to add your service account as writer to the gsheet
+[]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url}})
+*don't forget to add your service account as writer to the gsheet*
 
 This was the only python part needed, to read and write to gsheet. Feel free to make a pure bash implementation if you'd like (but make it simple please, otherwise, we know everything is possible..).
 
@@ -115,9 +115,9 @@ Since my current runs are nanogpt executions, I can give any global variable fro
 
 ![[gpt_params.png]]
 
-![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
+[]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png' | relative_url}})
 
-production parameters, logging all my debug runs?(no I'm not, wandb)
+*production parameters, logging all my debug runs?(no I'm not, wandb)*
 
 But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly run `k` runs by dividing the GPU RAM among `k` pieces. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu and make `k` equal to `1`.
 
