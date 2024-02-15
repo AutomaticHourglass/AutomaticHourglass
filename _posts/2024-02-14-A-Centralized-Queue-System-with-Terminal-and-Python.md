@@ -63,7 +63,7 @@ This part is up to your taste and/or requirements.
 I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
 ![[gsheet_screenshot.png]]
-![]({{ 'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url }})
+![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url}})
 
 The reader program is as follows:
 ``` python
@@ -105,7 +105,7 @@ if __name__ == "__main__":
 Quite simple, just reading `B1` cell and offsetting the line to read from `C` column. You can make it as complicated as you want of course.
 
 ![[share_with_service_account.png]]
-![]('assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url )
+![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url )
 *don't forget to add your service account as writer to the gsheet*
 
 This was the only python part needed, to read and write to gsheet. Feel free to make a pure bash implementation if you'd like (but make it simple please, otherwise, we know everything is possible..).
