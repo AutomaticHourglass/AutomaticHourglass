@@ -60,9 +60,10 @@ Lets go over the this party by part:
 
 This part is up to your taste and/or requirements.
 
-I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one line of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
+I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one column of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
-({{AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path}})
+![[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png]]
+[]({{AutomaticHourglass/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png | relative_path}})
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url}})
 
 The reader program is as follows:
@@ -119,21 +120,20 @@ Since my current runs are nanogpt executions, I can give any global variable fro
 
 *production parameters, logging all my debug runs?(no I'm not, wandb)*
 
-But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly run `k` runs by dividing the GPU RAM among `k` pieces. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu and make `k` equal to `1`.
+But estimating batch_size from get go is not that easy and I wanted to challenge that. What if I make a run for 1-2 minutes with a predefined `batch_size`, then measure the gpu memory and estimate the maximum possible `batch_size` with a safety margin? That would eliminate the estimation of the `batch_size` and also allows us to constantly make. Since my experiments are process bound instead of memory bound, I tend to utilise the whole gpu. Technically, you can tweak this to have multiple running processes at the same time too.
 
-Another problem comes with this is the nanogpt runs are a single process that can't be interrupted. The solution to this problem is two fold:
+Another problem comes with this is the [nanogpt](https://github.com/karpathy/nanoGPT) runs are a single process that can't be interrupted. The solution to this problem is two fold:
 - fire up a subprocess that measures the GPU usage
 - wait for response to catch up with the original process
 
-So my main process will fire up an experiment with *additional* parameters that *overrides* the *overridden* parameters (logging, batch size) but the remaining parameters would be the same so that we can reliably measure the memory consumption. Since the gpu usage is 0 on process beginning and end, how would you measure the maximum GPU RAM usage during this short training period?
+So my main process will fire up an experiment with *additional* parameters that *overrides* the *overridden* parameters (logging, batch size) but the remaining parameters would be the same so that we can reliably measure the memory consumption. Since the gpu usage is 0 on process beginning and end, how would you measure the maximum GPU RAM usage during this short training period? By making subprocesses of course!
 ``` bash
 # Override arguments for the first attempt
 OVERRIDES=" --max_tokens=1000000 --wandb_log=False"
 ```
 
 ### Making Subprocesses
-By making subprocesses! The reason is this;
-At any given point in time, you can measure the current gpu usage by probing `nvidia-smi` function in a subprocess but at which point? But what if we take 12 samples one after another every 10 seconds for a total of 2 minutes and return the maximum value we see during this time period?
+ At any given point in time, you can measure the current gpu usage by probing `nvidia-smi` function in a subprocess but at which point? But what if we take 12 samples one after another every 10 seconds for a total of 2 minutes and return the maximum value we see during this time period?
 
 ``` bash
 max_gpu_usage() {
@@ -183,9 +183,9 @@ calculate_batch_size() {
 }
 ```
 
-I have found out that adding an additional constant like `0.9` or `*9/10` to the calculation gave better overall performance since there were no failing runs due to GPU RAM size after that.
+I have found out that adding an additional constant like `0.9` or `* 9 / 10` to the calculation gave better overall performance since there were no failing runs due to GPU RAM size after that.
 
-I vaguely remember that having `batch_size` as a multiple of `16` gave much better throughput so I added this line in the code:
+I vaguely remember that having `batch_size` as a multiple of `16` gave much better throughput so I added this line in the code which makes the batch size as a multiple of beginning size (8 in my case):
 ``` bash
 # Round down to the nearest multiple of default_batch_size
     local rounded_batch_size=$((max_batch_size / default_batch_size * default_batch_size))
