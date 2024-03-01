@@ -14,7 +14,7 @@ author: Dr. Ünsal Gökdağ
 ## TL;DR
 You can run multiple resources (GPU) consuming a central queue system(gsheet) with minimal intervention (mobile phone) 24/7 any place, any time and also check its status (logging, wandb).
 
-Interested in the solution? [Look at the end of the article](### PS: Whole Code)
+Interested in the solution? [Look at the end of the article](#solution)
 
 Interested in the process? Read along..
 
@@ -229,7 +229,7 @@ This was actually fun and very teaching for me as now I have a responsibility to
 As usual, I thank chatGPT for making my life very easy throughout the process but keeping me vigilant by frequent hallucinations or forgetting variables that existed or discussed about.
 
 ---
-## PS: Whole Code
+## PS: Whole Code  {#solution}
 file: `read_queue.py`
 ``` python
 import gspread
