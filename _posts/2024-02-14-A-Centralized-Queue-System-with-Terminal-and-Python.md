@@ -12,18 +12,18 @@ comments: true
 author: Dr. Ünsal Gökdağ
 ---
 ## TL;DR
-You can run multiple resources (GPU) consuming a central queue system(gsheet) with minimal intervention (mobile phone) 24/7 any place, any time (again, mobile phone) and also, check its status (logging, wandb).
+You can run multiple resources (GPU) consuming a central queue system(gsheet) with minimal intervention (mobile phone) 24/7 any place, any time and also check its status (logging, wandb).
 
-Interested in the solution? [Look at the end of the article](## PS: Whole Code)
+Interested in the solution? [Look at the end of the article](### PS: Whole Code)
 
 Interested in the process? Read along..
 
 ## The Problem
-I'm currently doing *a lot* of experiments on [runpod](https://runpod.io?ref=7mip03at) for machine learning purposes and I have realised that I'm constantly using at least 2 GPUs, all the time. I remember getting up from sleep and making typing a simple run script, changing a few characters and the going back to sleep and I did not liked this experience.
+I'm currently conducting *a lot* of machine learning experiments on [runpod](https://runpod.io?ref=7mip03at) and I have realised that I'm constantly using at least 2 GPUs, all the time. I remember getting up from sleep and typing a simple run script, changing a few characters and the going back to sleep and I did not liked this experience.
 
-So I started dabbling with chatGPT to create a simple bash script that reads a file which is literally called `gpu_queue.txt`, reads the first line and execute it. After a few minutes, a running version was working as intended.
+So I started dabbling with chatGPT to create a simple bash script that opens a file, reads the first line and execute it. After a few minutes, it was working as intended.
 
-What I have started as a requirement is that multiple version of this should be able to run concurrently without executing lines from the queue unless the gpu is free of use. Checking that required me to use file locks which I liked learning from chatGPT but the end solution became something *different* but *better* a bit in my opinion.
+What I have started as a requirement is that multiple instances of this should be able to run concurrently without executing lines from the queue unless the gpu is free of use. Checking that required me to use file locks which I liked learning from chatGPT but the end solution became something *different*.
 
 ## The Solution
 I have thought about the ideal solution should have these:
@@ -51,16 +51,20 @@ This part is a while loop with a 5 second delay that executes the queue if the g
 
 Execute Queue consists of 4 parts:
 - Reading an element from the queue
-- Executing this with first additional parameters: To estimate batch size
+- Executing this with first fixed batch size and lower iteration: To estimate batch size memory usage
+	- a sub-process is observing the memory usage every `u` second (details)
+	- disable logging since this is a temporary run,
 	- Measuring maximum gpu memory during this period
 - Executing this with second additional parameters: To make the actual run
+	- Override the fixed batch size
+	- override logging to enable logging
 
-Lets go over the this party by part:
+Lets go over this party by part:
 ### Reading an Element from the Queue
 
 This part is up to your taste and/or requirements.
 
-I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The ghseet is quite simple, it consists of one column of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
+I have used the way satisfies all of my requirements. I'm reading the queue from a gsheet that I own. The gsheet is quite simple, it consists of one column of text entries as being the "Queue" and one *counter* which denotes the current location in the queue.
 
 ![[assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png]]
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png' | relative_url}})
@@ -102,9 +106,9 @@ if __name__ == "__main__":
 
 ```
 
-Quite simple, just reading `B1` cell and offsetting the line to read from `C` column. You can make it as complicated as you want of course.
+Quite simple, just reading `B1` cell and offsetting the line to read from `C` column, easy to change or replace with another logic.
 
-![[share_with_service_account.png]]
+![[share_with_service_account2.png]]
 ![]({{'assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png' | relative_url}}){: .mx-auto.d-block :}
 
 *don't forget to add your service account as writer to the gsheet*{: .mx-auto.d-block :}

@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e8aa57885e6ea73a",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+                "file": "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+                "file": "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +136,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md"
+                "file": "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png"
               }
             }
           }
@@ -146,14 +157,18 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a4a22a675184a5dc",
+  "active": "e8aa57885e6ea73a",
   "lastOpenFiles": [
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account2.png",
+    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
+    "aboutme.md",
+    "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
+    "README.md",
+    "CHANGELOG.md",
+    "_posts/2020-02-28-sample-markdown.md",
+    "Pasted image 20240215144750.png",
     "_site/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
     "_site/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/Untitled.png",
-    "_site/Pasted image 20240215144750.png",
-    "Pasted image 20240215144750.png",
-    "_posts/2020-02-28-sample-markdown.md",
-    "_posts/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python.md",
     "{{.md",
     "package-lock.json",
     "package.json",
@@ -184,15 +199,10 @@
     "node_modules/@docsearch/react/README.md",
     "node_modules/@vueuse/core/node_modules/vue-demi/README.md",
     "node_modules/@algolia/autocomplete-preset-algolia/README.md",
-    "node_modules/@algolia/autocomplete-core/README.md",
-    "node_modules/@vueuse/integrations/node_modules/vue-demi/README.md",
-    "node_modules/@algolia/autocomplete-plugin-algolia-insights/README.md",
     "_site/assets/img/bgimage.png",
     "_site/assets/img/avatar-icon.png",
     "_site/assets/img/404-southpark.jpg",
     "_site/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png",
-    "_site/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png",
-    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/share_with_service_account.png",
-    "assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gsheet_screenshot.png"
+    "_site/assets/2024-02-14-A-Centralized-Queue-System-with-Terminal-and-Python/gpt_params.png"
   ]
 }
